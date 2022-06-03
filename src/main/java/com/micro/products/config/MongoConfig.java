@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRep
 @EnableReactiveMongoRepositories
 public class MongoConfig extends AbstractReactiveMongoConfiguration {
 
-    @Value("{mongo.uri}")
+    @Value("${spring.data.mongo.uri}")
     String uriMongo;
 
     @Override
@@ -19,6 +19,6 @@ public class MongoConfig extends AbstractReactiveMongoConfiguration {
 
     @Override
     protected String getDatabaseName() {
-        return "rebels";
+        return "products";
     }
 }
